@@ -3,9 +3,9 @@ Based on the https://github.com/rustwasm/wasm-pack-template.git
 This project uses wasm-build and webpack-dev-server together to serve a wasm binary compiled from a syntax called (CWF)[https://github.com/thisminute/cascading-wasm-framework].
 
 To install, you will need:
-1. (rustc/cargo)[https://www.rust-lang.org/tools/install]
-1. (node/npm)[https://nodejs.org/en/download/]
-1. (wasm-pack)[https://rustwasm.github.io/wasm-pack/installer/]
+1. [rustc/cargo](https://www.rust-lang.org/tools/install)
+1. [node/npm](https://nodejs.org/en/download/)
+1. [wasm-pack](https://rustwasm.github.io/wasm-pack/installer/)
 
 Then:
 ```
