@@ -1,6 +1,12 @@
 Based on the https://github.com/rustwasm/wasm-pack-template.git
 
+# Installation
 This project uses wasm-build and webpack-dev-server together to serve a wasm binary compiled from a syntax called (CWF)[https://github.com/thisminute/cascading-wasm-framework].
+
+To install, you will need:
+1. [rustc/cargo](https://www.rust-lang.org/tools/install)
+1. [node/npm](https://nodejs.org/en/download/)
+1. [wasm-pack](https://rustwasm.github.io/wasm-pack/installer/)
 
 Then:
 ```
@@ -20,7 +26,9 @@ npm run clean # will run wasm-pack and npm install
 npm start     # opens a new browser tab in watch mode for the binary!
 ```
 
-Once started, try editing src/lib.rs. Example:
+# Usage
+
+All code goes in the `./cwf` directory in .cwf files. Example file:
 
 ```cwf
 div {
@@ -39,15 +47,3 @@ represents
    world
 </span>
 ```
-
-Try editing the tag types or content of the elements, or adding more!
-
-# Understanding the Code
-
-## Procedural Macro
-`./src/lib.rs` is the entry point for the procedural macro that generates Rust code from Cwf file input.
-
-`./src/tokens.rs` is the definition file for the tokens that the language consists of. Rule and List are the most important tokens.
-
-## `create-cwf-app`
-`./create-cwf-app` creates a node/webpack server that is used to test and deploy the language. See its README for more!
