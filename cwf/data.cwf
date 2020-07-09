@@ -6,16 +6,18 @@
 //    border-radius: "5px";
 // }
 //
-// $input {
+// input {
 //    data-bind: ;
 //    data-once: ;
 //    data-watch: ;
-//    inputfield: text;
+//    input: text;
 // }
 //
-// get_data {
+// motd {
+//    data-once: "this gets overwritten by a message of the day";
+//    data-watch: //motd;
 //    ?click {
-//       $special-button-data: $inputthing.value;
+//       route: //motd;
 //    }
 // }
 //
