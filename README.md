@@ -44,4 +44,10 @@ Try editing the tag types or content of the elements, or adding more!
 
 # Understanding the Code
 
-`./www` contains a node/webpack environment
+## Procedural Macro
+`./src/lib.rs` is the entry point for the procedural macro that generates Rust code from Cwf file input.
+
+`./src/tokens.rs` is the definition file for the tokens that the language consists of. Rule and List are the most important tokens.
+
+## `create-cwf-app`
+`./create-cwf-app` creates a node/webpack server that is used to test and deploy the language. See its README for more!
