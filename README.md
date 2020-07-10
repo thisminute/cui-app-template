@@ -22,7 +22,7 @@ rustup default stable-x86_64-pc-windows-gnu
 Then:
 ```
 cd create-cwf-app/www    # npm stuff is in the www directory
-npm run clean # will run wasm-pack and npm install
+npm run prod:clean # will run wasm-pack and npm install
 npm start     # opens a new browser tab in watch mode for the binary!
 ```
 
