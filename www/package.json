@@ -10,9 +10,10 @@
   "scripts": {
     "start": "wasm-pack build && run-p -n --aggregate-output serve rustwatch cwfwatch",
 
-    "debug": "run-s -c build:force debug:swap_in format build debug:swap_out",
-    "debug:swap_in": "mv ../src/lib.rs ../cwf_macro_input.rs && mv ../cwf_macro_output.rs ../src/lib.rs",
-    "debug:swap_out": "mv ../cwf_macro_input.rs ../src/lib.rs",
+    "debug": "run-s -c build:force debug:swap_in format build debug:swap_out debug:format_macro",
+    "debug:swap_in": "mv ../src/lib.rs ../target/cwf_macro_input.rs && cp ../target/cwf_macro_output.rs ../src/lib.rs",
+    "debug:swap_out": "cp ../target/cwf_macro_input.rs ../src/lib.rs",
+    "debug:format_macro": "rustfmt ../target/cwf_macro_output.rs",
 
     "serve": "webpack-dev-server --open",
     "test": "wasm-pack test --headless --chrome --firefox ..",
