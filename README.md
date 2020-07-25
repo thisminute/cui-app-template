@@ -1,7 +1,7 @@
 Based on the https://github.com/rustwasm/wasm-pack-template.git
 
 # Installation
-This project uses wasm-build and webpack-dev-server together to serve a wasm binary compiled from a syntax called [CWF](https://github.com/thisminute/cascading-wasm-framework).
+This project uses wasm-build and webpack-dev-server together to serve a wasm binary compiled from a syntax called [cwl](https://github.com/thisminute/cascading-wasm-language).
 
 To install, you will need:
 1. [rustc/cargo](https://www.rust-lang.org/tools/install)
@@ -10,7 +10,7 @@ To install, you will need:
 
 Then:
 ```
-git clone https://github.com/thisminute/create-cwf-app.git
+git clone https://github.com/thisminute/create-cwl-app.git
 ```
 
 For windows users, run in the root directory:
@@ -21,16 +21,17 @@ rustup default stable-x86_64-pc-windows-gnu
 
 Then:
 ```
-cd create-cwf-app/www    # npm stuff is in the www directory
-npm run prod:clean # will run wasm-pack and npm install
-npm start     # opens a new browser tab in watch mode for the binary!
+cd create-cwl-app/www # npm stuff is in the www directory
+wasm-pack build
+npm install
+npm start # opens a new browser tab in watch mode for the binary!
 ```
 
 # Usage
 
-All code goes in the `./cwf` directory in .cwf files. Example file:
+All code goes in the `./cwl` directory in .cwl files. Example file:
 
-```cwf
+```cwl
 div {
    text: hello;
 }
