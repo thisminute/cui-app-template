@@ -5,17 +5,20 @@
     "create-wasm-app": ".bin/create-cwl-app.js"
   },
   "scripts": {
-    "start": "wasm-pack build && run-p -n --aggregate-output serve rustwatch cwlwatch",
-    "debug": "run-s -c build:force debug:swap_in format build debug:swap_out debug:format_macro",
+    "start": "wasm-pack build && run-p -n --aggregate-output serve watch:*",
+    "build": "wasm-pack build",
+    "serve": "webpack-dev-server --open",
+    "test": "wasm-pack test --headless --chrome --firefox ..",
+    "debug": "run-s -c build:force debug:swap_in build debug:swap_out debug:format_macro",
+    "format": "rustfmt ../src/lib.rs",
+
+    "watch:cwl": "onchange -k ../cwl ../../cascading-wasm-language/src -- touch ../src/lib.rs",
+    "watch:rust": "onchange -k ../src -- wasm-pack build",
+
     "debug:swap_in": "mv ../src/lib.rs ../target/cwl_macro_input.rs && cp ../target/cwl_macro_output.rs ../src/lib.rs",
     "debug:swap_out": "cp ../target/cwl_macro_input.rs ../src/lib.rs",
     "debug:format_macro": "rustfmt ../target/cwl_macro_output.rs",
-    "serve": "webpack-dev-server --open",
-    "test": "wasm-pack test --headless --chrome --firefox ..",
-    "format": "rustfmt ../src/lib.rs",
-    "cwlwatch": "onchange -k ../cwl ../../cascading-wasm-language/src -- touch ../src/lib.rs",
-    "rustwatch": "onchange -k ../src -- wasm-pack build",
-    "build": "wasm-pack build",
+
     "build:force": "touch ../src/lib.rs && cargo build",
     "build:prod": "webpack --config webpack.config.js"
   },
