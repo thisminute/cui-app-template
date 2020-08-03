@@ -4,7 +4,7 @@ extern crate console_error_panic_hook;
 // std::panic::set_hook(Box::new(console_error_panic_hook::hook));
 
 cwl! {
-   title: "hi";
+   title: "hello";
 
    .text {
       text: "hello";
@@ -17,5 +17,4 @@ cwl! {
          background_color: "gray";
       }
    }
-
 }
