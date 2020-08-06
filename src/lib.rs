@@ -5,4 +5,11 @@ extern crate console_error_panic_hook;
 
 cwl! {
    title: "template";
+
+   element {
+      text: "click me to turn me blue";
+      ?click {
+         background_color: "blue";
+      }
+   }
 }
