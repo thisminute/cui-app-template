@@ -5,20 +5,17 @@
     "create-wasm-app": ".bin/create-cwl-app.js"
   },
   "scripts": {
-    "start": "wasm-pack build && run-p -n --aggregate-output serve watch:*",
-    "build": "wasm-pack build",
+    "start": "npm run build && run-p -n --aggregate-output serve watch:*",
+    "build": "wasm-pack build && cp ../target/cwl.html index.html",
     "serve": "webpack-dev-server --open",
     "test": "wasm-pack test --headless --chrome --firefox ..",
     "debug": "run-s -c build:force debug:swap_in format build debug:swap_out debug:format_macro",
     "format": "rustfmt ../src/lib.rs",
-
     "watch:cwl": "onchange -k ../cwl ../../cascading-wasm-language/src -- touch ../src/lib.rs",
-    "watch:rust": "onchange -k ../src -- wasm-pack build",
-
+    "watch:rust": "onchange -k ../src -- npm run build",
     "debug:swap_in": "mv ../src/lib.rs ../target/cwl_macro_input.rs && cp ../target/cwl_macro_output.rs ../src/lib.rs",
     "debug:swap_out": "cp ../target/cwl_macro_input.rs ../src/lib.rs",
     "debug:format_macro": "cp ../target/cwl_macro_output.rs ../target/cwl_macro_output_formatted.rs && rustfmt ../target/cwl_macro_output_formatted.rs",
-
     "build:force": "touch ../src/lib.rs && cargo build",
     "build:prod": "webpack --config webpack.config.js"
   },
