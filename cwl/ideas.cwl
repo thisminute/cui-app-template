@@ -26,3 +26,4 @@
 //
 // button(.big-button,.click-button) {
 // }
+// page transitions? cool one: when you click a route, elements in an expanding radius from the click get hidden and replaced with ones in the same location on the new page
