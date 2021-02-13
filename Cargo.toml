@@ -14,7 +14,7 @@ crate-type = ["cdylib", "rlib"]
 default = ["console_error_panic_hook"]
 
 [dependencies]
-cascading-wasm-language = "0.0.1"
+cascading-wasm-language = { path = "../cascading-wasm-language" }
 console_error_panic_hook = { version = "0.1", optional = true }
 proc-macro2 = { version = "1.0", features = ["nightly"] }
 quote = "1.0"
@@ -24,6 +24,7 @@ wasm-bindgen = "0.2"
 [dependencies.web-sys]
 version = "0.3"
 features = [
+  "console",
   "CssStyleDeclaration",
   "CssStyleSheet",
   "Document",
