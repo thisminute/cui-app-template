@@ -6,7 +6,7 @@
   },
   "scripts": {
     "start": "npm run build && run-p -n --aggregate-output serve watch:*",
-    "build": "wasm-pack build && cp ../target/cwl.html index.html",
+    "build": "wasm-pack build && cp ../target/index.html index.html",
     "serve": "webpack-dev-server --open",
     "test": "wasm-pack test --headless --chrome --firefox ..",
     "debug": "run-s -c build:force debug:swap_in format build debug:swap_out debug:format_macro",
@@ -29,11 +29,11 @@
     "cwl-rust": "file:../pkg"
   },
   "devDependencies": {
-    "copy-webpack-plugin": "^6.0.3",
+    "copy-webpack-plugin": "^7.0.0",
     "npm-run-all": "^4.1.5",
-    "onchange": "^7.0.2",
-    "webpack": "^4.44.0",
-    "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0"
+    "onchange": "^7.1.0",
+    "webpack": "^5.21.2",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
   }
 }
