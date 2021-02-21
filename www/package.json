@@ -6,7 +6,7 @@
   },
   "scripts": {
     "start": "npm run build && run-p -n --aggregate-output serve watch:*",
-    "build": "wasm-pack build && cp ../target/index.html index.html",
+    "build": "mkdir -p ../target/html && wasm-pack build && cp ../target/html/index.html index.html",
     "serve": "webpack-dev-server --open",
     "test": "wasm-pack test --headless --chrome --firefox ..",
     "debug": "run-s -c build:force debug:swap_in format build debug:swap_out debug:format_macro",

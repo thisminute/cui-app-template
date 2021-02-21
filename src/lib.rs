@@ -6,10 +6,23 @@ extern crate console_error_panic_hook;
 cwl! {
 	title: "template";
 	text: "root";
-	element {
+	// .button {
+	// 	background_color: "red";
+	// 	?click {
+	// 		background_color: "blue";
+	// 	}
+	// }
+
+	button {
+		background_color: "red";
 		text: "click me to turn me blue";
-		?click {
-			background_color: "blue";
-		}
+		link: "https://google.com/";
+	}
+
+	button {
+		text: "click me also to turn me blue";
+		// ?click {
+		// 	text: "I've turned blue!";
+		// }
 	}
 }
