@@ -14,15 +14,15 @@ crate-type = ["cdylib", "rlib"]
 default = ["console_error_panic_hook"]
 
 [dependencies]
-cascading-wasm-language = { path = ".." }
-console_error_panic_hook = { version = "0.1", optional = true }
-proc-macro2 = { version = "1.0", features = ["nightly"] }
+cascading-wasm-language = {path = ".."}
+console_error_panic_hook = {version = "0.1", optional = true}
+lazy_static = "1.4.0"
+proc-macro2 = {version = "1.0", features = ["nightly"]}
 quote = "1.0"
-syn = { version = "1.0", features = ["extra-traits", "full", "visit-mut", "parsing"] }
+syn = {version = "1.0", features = ["extra-traits", "full", "visit-mut", "parsing"]}
 wasm-bindgen = "0.2"
 
 [dependencies.web-sys]
-version = "0.3"
 features = [
   "console",
   "CssStyleDeclaration",
@@ -32,12 +32,15 @@ features = [
   "Event",
   "EventListener",
   "EventTarget",
+  "HtmlCollection",
   "HtmlElement",
   "HtmlHeadElement",
   "Location",
   "Node",
+  "NodeList",
   "Window",
 ]
+version = "0.3"
 
 [dev-dependencies]
 wasm-bindgen-test = "0.3.0"
