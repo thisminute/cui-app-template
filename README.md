@@ -113,7 +113,7 @@ a {
 
 // element in element
 // create an element of class "a", then create an element of class "b" inside it with the rules applied
-// NOTE: can conflict with elements in other blocks (see [Structures](#structures))
+// NOTE: can conflict with elements in other blocks (see Structures section)
 a {
    b {
       // rules
@@ -122,7 +122,7 @@ a {
 
 // element in class
 // in all descendants of class "a", create an element of class "b" with the rules applied
-// NOTE: can conflict with elements in other blocks (see [Structures](#structures))
+// NOTE: can conflict with elements in other blocks (see Structures section)
 .a {
    b {
       // rules
@@ -154,7 +154,7 @@ a {
 }
 
 // element in listener
-// when the parent is clicked, replace its structure (see [Structures](#structures)) with an element of class "a"  with the rules applied
+// when the parent is clicked, replace its structure (see Structures section) with an element of class "a"  with the rules applied
 ?click {
    a {
       // rules
