@@ -1,28 +1,31 @@
 use cascading_wasm_language::cwl;
-extern crate console_error_panic_hook;
-
-// std::panic::set_hook(Box::new(console_error_panic_hook::hook));
 
 cwl! {
-	title: "template";
-	text: "root";
-	// .button {
-	// 	background_color: "red";
-	// 	?click {
-	// 		background_color: "blue";
-	// 	}
-	// }
+	title: "hello world";
 
-	button {
-		background_color: "red";
-		text: "click me to turn me blue";
-		link: "https://google.com/";
+	text: "this is a demo of some implemented features";
+
+	.a {
+		color: "blue";
 	}
-
-	button {
-		text: "click me also to turn me blue";
-		// ?click {
-		// 	text: "I've turned blue!";
-		// }
+	a {
+		text: "clicking me does nothing";
+		.b {
+			color: "green";
+		}
+		b {
+			?click {
+				text: "hi";
+			}
+			text: "click me to say hi";
+		}
+	}
+	a {
+		text: "clicking me makes a new element";
+		?click {
+			b {
+				text: "clicking me still makes a new element";
+			}
+		}
 	}
 }
