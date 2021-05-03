@@ -63,7 +63,7 @@ This block, similar to the first but without a `.` at the beginning, would creat
 }
 ```
 
-This last block type is a listener block, which start with a `?`, and refer to an event name instead of a class name. Listener blocks apply to a single parent element when the event with the specified name fires with that element as the target (in this case, if the element is clicked). A cwl project with this listener at the root level would set the page to have blue text when the page was clicked, since the page itself would be the parent. Common event names are built in, such as `click`, `focus`, `mouseover`, etc.
+This last block type is a listener block, which start with a `?`, and refer to event names instead of class names. Listener blocks apply to a single parent element when the event with the specified name fires with that element as the target (in this case, if the element is clicked). A cwl project with this listener at the root level would set the page to have blue text when the page was clicked, since the page itself would be the parent. Common event names are built in, such as `click`, `focus`, `mouseover`, etc.
 
 To understand the syntax of listeners, it may be helpful to think of them as changing the time at which their contents apply, but not having a role in structure directly. The example listener is still a statement about the color of the page, just at a future time, when it has been clicked. If the listener has structure (at least one instance block) in it, that structure will overwrite the structure of the parent when the listener is triggered. Variables and data are to be used if the structure needs to be modified instead of being replaced.
 
