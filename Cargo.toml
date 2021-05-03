@@ -14,7 +14,7 @@ crate-type = ["cdylib", "rlib"]
 default = ["console_error_panic_hook"]
 
 [dependencies]
-cascading-wasm-language = "0.0.2"
+cascading-wasm-language = {path = ".."}
 console_error_panic_hook = {version = "0.1", optional = true}
 lazy_static = "1.4.0"
 proc-macro2 = {version = "1.0", features = ["nightly"]}
