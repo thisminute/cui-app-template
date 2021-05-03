@@ -55,7 +55,7 @@ my-class {
 }
 ```
 
-This block, without the `.` at the beginning, would create an element, and then modify the properties of that element directly. If both blocks set the same property, the property in the _element block_ would override the property in the _class block_. In this case, if this was used with the first code block, there will be just one element, and it will say "hello world" in green text. Writing `my-class {}` with no properties is similar to writing `<div class="my-class"></div>` in html, and setting the color inside of the block is similar to overwriting the class property with an inline style (or exactly that, in the case of css properties).
+This block, similar to the first but without a `.` at the beginning, would create an element, and then modify the properties of that element directly. If both blocks set the same property, the property in the _element block_ would override the property in the _class block_. In this case, if this was used with the first code block, there will be just one element, and it will say "hello world" in green text. Writing `my-class {}` with no properties is similar to writing `<div class="my-class"></div>` in html, and setting the color inside of the block is similar to overwriting the class property with an inline style (or exactly that, in the case of css properties).
 
 ```cwl
 ?click {
