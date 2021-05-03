@@ -170,7 +170,7 @@ a {
 }
 ```
 
-# Structures
+### Structures
 
 Any block that contains at least one element block defines some structure that will apply to an element. An error is thrown during a build if multiple blocks define a structure at the same time. The word "time" is important here, because listeners can overwrite structures, but with only one structure at a time. For any listener, the effects must never write more than one structure to an element, and outside of listeners, every element must only have its structure specified in one place. For example:
 
@@ -203,7 +203,7 @@ a {
 
 To use a listener to modify a structure instead of replacing it, you will need variables.
 
-# Variables
+### Variables
 
 To be implemented...
 
