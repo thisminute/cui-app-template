@@ -24,7 +24,7 @@ cwl! {
 		text: "clicking me makes a new element";
 		?click {
 			b {
-				text: "clicking me still makes a new element";
+				text: "hello world!";
 			}
 		}
 	}
