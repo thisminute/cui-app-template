@@ -16,7 +16,6 @@ default = ["console_error_panic_hook"]
 [dependencies]
 cascading-wasm-language = {path = ".."}
 console_error_panic_hook = {version = "0.1", optional = true}
-lazy_static = "1.4"
 wasm-bindgen = "0.2"
 
 [dependencies.web-sys]
