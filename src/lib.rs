@@ -1,15 +1,31 @@
-use cascading_ui::cui;
+use cascading_wasm_language::cui;
 
-// type CssColor = (&'static str, String);
+cui! {
+	title: "hello world";
 
-cui! { // 0
-	text: "click me";
-	?click {
-		.a {
-			color: "blue";
+	text: "this is a demo of some implemented features";
+
+	.a {
+		color: "blue";
+	}
+	a {
+		text: "clicking me does nothing";
+		.b {
+			color: "green";
 		}
-		a {
-			text: "hello world";
+		b {
+			?click {
+				text: "hi";
+			}
+			text: "click me to say hi";
+		}
+	}
+	a {
+		text: "clicking me makes a new element";
+		?click {
+			b {
+				text: "hello world!";
+			}
 		}
 	}
 }
