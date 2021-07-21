@@ -1,4 +1,4 @@
-use cascading_wasm_language::cui;
+use cascading_ui::cui;
 
 cui! {
 	title: "hello world";
