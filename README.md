@@ -6,6 +6,8 @@ This repository is basically a customized [wasm-pack-template](https://github.co
 
 # Example
 
+This example creates a single element which contains "hello world" in red text, and the text turns blue when the element is clicked:
+
 ```cui
 // all elements of `my-class` have red text
 .my-class {
