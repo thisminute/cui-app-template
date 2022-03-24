@@ -1,10 +1,8 @@
-Based on the https://github.com/rustwasm/wasm-pack-template.git
-
-# About
+## About
 
 This repository is basically a customized [wasm-pack-template](https://github.com/rustwasm/wasm-pack-template.git) that can be used to serve HTML and Wasm compiled from [CUI](https://github.com/thisminute/cascading-ui) code.
 
-# Example
+## Example
 
 This example creates a single element which contains "hello world" in red text, and the text turns blue when the element is clicked:
 
@@ -25,7 +23,7 @@ my-class {
 }
 ```
 
-# Install
+## Install
 
 To install, you will need:
 
@@ -57,7 +55,7 @@ npm start # opens a new browser tab in watch mode
 
 After installation, you can modify the source code in `src/lib.rs`, and the page should automatically refresh. If the server stops, `npm start` while in the `www` directory will rebuild and serve the page.
 
-# Cascading UI
+## Cascading UI
 
 Cascading UI is named for the Cascading in Cascading Style Sheets, which it borrows its basic syntax from. CUI has classes like CSS:
 
