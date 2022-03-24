@@ -1,1 +1,1 @@
-import "cwl-rust";
+import "cui-rust";

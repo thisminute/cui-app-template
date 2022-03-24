@@ -1,6 +1,6 @@
-use cascading_wasm_language::cwl;
+use cascading_ui::cui;
 
-cwl! {
+cui! {
 	title: "hello world";
 
 	text: "this is a demo of some implemented features";

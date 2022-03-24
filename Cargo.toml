@@ -1,10 +1,10 @@
 [package]
 authors = ["us"]
-description = "Skeleton for a cwl web app"
+description = "Skeleton for a CUI web app"
 edition = "2018"
 license = "MIT"
-name = "create-cwl-app"
-repository = "https://github.com/thisminute/create-cwl-app"
+name = "cui-app-template"
+repository = "https://github.com/thisminute/cui-app-template"
 version = "0.0.1"
 
 [lib]
@@ -14,7 +14,7 @@ crate-type = ["cdylib", "rlib"]
 default = ["console_error_panic_hook"]
 
 [dependencies]
-cascading-wasm-language = {path = ".."}
+cascading-ui = {path = ".."}
 console_error_panic_hook = {version = "0.1", optional = true}
 wasm-bindgen = "0.2"
 
