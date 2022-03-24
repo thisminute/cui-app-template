@@ -4,7 +4,7 @@ Based on the https://github.com/rustwasm/wasm-pack-template.git
 
 This project uses wasm-build and webpack-dev-server together to serve a wasm binary compiled from a domain-specific syntax called [CUI](https://github.com/thisminute/cascading-ui).
 
-CUI compiles into HTML and a Wasm binary. This repository is basically a customized [wasm-pack-template](Based on the https://github.com/rustwasm/wasm-pack-template.git) for use with CUI. After installation, modify the source code in `src/lib.rs`, and run `npm install` and `npm start` while in the `www` directory to build the page and show it in a browser.
+CUI compiles into HTML and a Wasm binary. This repository is basically a customized [wasm-pack-template](https://github.com/rustwasm/wasm-pack-template.git) for use with CUI. After installation, modify the source code in `src/lib.rs`, and run `npm install` and `npm start` while in the `www` directory to build the page and show it in a browser.
 
 # Install
 
