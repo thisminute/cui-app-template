@@ -55,7 +55,7 @@ my-class {
 }
 ```
 
-This block, without the `.` at the beginning, would create an element, and then modify the properties of that element directly. If both blocks set the same property, the property in the _element block_ would override the property in the _class block_. In this case, if this was used with the first code block, there will be just one element, and it will say "hello world" in green text. Writing `my-class {}` with no properties is similar to writing `<div class="my-class"></div>` in html, and setting the color inside of the block is similar to overwriting the class property with an inline style (or exactly that, in the case of css properties).
+This block, similar to the first but without a `.` at the beginning, would create an element, and then modify the properties of that element directly. If both blocks set the same property, the property in the _element block_ would override the property in the _class block_. In this case, if this was used with the first code block, there will be just one element, and it will say "hello world" in green text. Writing `my-class {}` with no properties is similar to writing `<div class="my-class"></div>` in html, and setting the color inside of the block is similar to overwriting the class property with an inline style (or exactly that, in the case of css properties).
 
 ```cwl
 ?click {
@@ -63,7 +63,7 @@ This block, without the `.` at the beginning, would create an element, and then 
 }
 ```
 
-This last block type is a listener block, which start with a `?`, and refer to an event name instead of a class name. Listener blocks apply to a single parent element when the event with the specified name fires with that element as the target (in this case, if the element is clicked). A cwl project with this listener at the root level would set the page to have blue text when the page was clicked, since the page itself would be the parent. Common event names are built in, such as `click`, `focus`, `mouseover`, etc.
+This last block type is a listener block, which start with a `?`, and refer to event names instead of class names. Listener blocks apply to a single parent element when the event with the specified name fires with that element as the target (in this case, if the element is clicked). A cwl project with this listener at the root level would set the page to have blue text when the page was clicked, since the page itself would be the parent. Common event names are built in, such as `click`, `focus`, `mouseover`, etc.
 
 To understand the syntax of listeners, it may be helpful to think of them as changing the time at which their contents apply, but not having a role in structure directly. The example listener is still a statement about the color of the page, just at a future time, when it has been clicked. If the listener has structure (at least one instance block) in it, that structure will overwrite the structure of the parent when the listener is triggered. Variables and data are to be used if the structure needs to be modified instead of being replaced.
 
@@ -113,7 +113,7 @@ a {
 
 // element in element
 // create an element of class "a", then create an element of class "b" inside it with the rules applied
-// NOTE: can conflict with elements in other blocks (see [Structures](#structures))
+// NOTE: can conflict with elements in other blocks (see Structures section)
 a {
    b {
       // rules
@@ -122,7 +122,7 @@ a {
 
 // element in class
 // in all descendants of class "a", create an element of class "b" with the rules applied
-// NOTE: can conflict with elements in other blocks (see [Structures](#structures))
+// NOTE: can conflict with elements in other blocks (see Structures section)
 .a {
    b {
       // rules
@@ -154,7 +154,7 @@ a {
 }
 
 // element in listener
-// when the parent is clicked, replace its structure (see [Structures](#structures)) with an element of class "a"  with the rules applied
+// when the parent is clicked, replace its structure (see Structures section) with an element of class "a"  with the rules applied
 ?click {
    a {
       // rules
@@ -170,7 +170,7 @@ a {
 }
 ```
 
-# Structures
+### Structures
 
 Any block that contains at least one element block defines some structure that will apply to an element. An error is thrown during a build if multiple blocks define a structure at the same time. The word "time" is important here, because listeners can overwrite structures, but with only one structure at a time. For any listener, the effects must never write more than one structure to an element, and outside of listeners, every element must only have its structure specified in one place. For example:
 
@@ -203,7 +203,7 @@ a {
 
 To use a listener to modify a structure instead of replacing it, you will need variables.
 
-# Variables
+### Variables
 
 To be implemented...
 
