@@ -2,9 +2,26 @@ Based on the https://github.com/rustwasm/wasm-pack-template.git
 
 # About
 
-This project uses wasm-build and webpack-dev-server together to serve a wasm binary compiled from a domain-specific syntax called [CUI](https://github.com/thisminute/cascading-ui).
+This repository is basically a customized [wasm-pack-template](https://github.com/rustwasm/wasm-pack-template.git) that can be used to serve HTML and Wasm compiled from [CUI](https://github.com/thisminute/cascading-ui) code.
 
-CUI compiles into HTML and a Wasm binary. This repository is basically a customized [wasm-pack-template](https://github.com/rustwasm/wasm-pack-template.git) for use with CUI. After installation, modify the source code in `src/lib.rs`, and run `npm install` and `npm start` while in the `www` directory to build the page and show it in a browser.
+# Example
+
+```cui
+// all elements of `my-class` have red text
+.my-class {
+   color: "red";
+}
+
+// create an element of my-class that says "hello world"
+my-class {
+   text: "hello world";
+
+   // if you click the element, it will turn blue
+   ?click {
+      color: "blue";
+   }
+}
+```
 
 # Install
 
@@ -17,7 +34,7 @@ To install, you will need:
 Then:
 
 ```
-git clone https://github.com/thisminute/create-cui-app.git
+git clone https://github.com/thisminute/cui-app-template.git
 ```
 
 For windows users, run in the root directory:
@@ -30,11 +47,13 @@ rustup default stable-x86_64-pc-windows-gnu
 Then:
 
 ```
-cd create-cui-app/www # npm stuff is in the www directory
+cd cui-app-template/www # npm stuff is in the www directory
 wasm-pack build
 npm install
 npm start # opens a new browser tab in watch mode
 ```
+
+After installation, you can modify the source code in `src/lib.rs`, and the page should automatically refresh. If the server stops, `npm start` while in the `www` directory will rebuild and serve the page.
 
 # Cascading UI
 
