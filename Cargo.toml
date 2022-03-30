@@ -1,8 +1,8 @@
 [package]
 authors = ["us"]
-description = "Skeleton for a CUI web app"
+description = "compiles CUI code into a deployable package"
 edition = "2018"
-license = "MIT"
+license = "CC0-1.0"
 name = "cui-app-template"
 repository = "https://github.com/thisminute/cui-app-template"
 version = "0.0.1"
@@ -10,13 +10,11 @@ version = "0.0.1"
 [lib]
 crate-type = ["cdylib", "rlib"]
 
-[features]
-default = ["console_error_panic_hook"]
-
 [dependencies]
-cascading-ui = {path = ".."}
-console_error_panic_hook = {version = "0.1", optional = true}
-wasm-bindgen = "0.2"
+cascading-ui = {path = "../.."}
+console_error_panic_hook = "^0.1.7"
+wasm-bindgen = "^0.2.79"
+wasm-bindgen-test = {version = "^0.3.29", optional = true}
 
 [dependencies.web-sys]
 features = [
@@ -36,11 +34,8 @@ features = [
   "NodeList",
   "Window",
 ]
-version = "0.3"
-
-[dev-dependencies]
-wasm-bindgen-test = "0.3"
+version = "^0.3.56"
 
 [profile.release]
-# Tell `rustc` to optimize for small code size.
+# Tell `rustc` to optimize for small (s) code size.
 opt-level = "s"
