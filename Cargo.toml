@@ -11,7 +11,7 @@ version = "0.0.1"
 crate-type = ["cdylib", "rlib"]
 
 [dependencies]
-cascading-ui = {path = "../.."}
+cascading-ui = "^0.0.1"
 console_error_panic_hook = "^0.1.7"
 wasm-bindgen = "^0.2.79"
 wasm-bindgen-test = {version = "^0.3.29", optional = true}
